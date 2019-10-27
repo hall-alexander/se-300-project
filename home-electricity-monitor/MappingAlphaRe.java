@@ -114,10 +114,14 @@ class DrawingPanel extends JPanel implements MouseListener, MouseMotionListener 
         }
 		g.drawString(message, 300, 300);
 		
+		 
+		IntStream stream = IntStream.range(-20, 20);
 		for (Point p: points){
 			Point firstPoint = points.get(0);
-			if (p.getX() == firstPoint.getX()+5 && firstPoint.getX()-5 ){
-				
+			if (p.getX() == firstPoint.getX()+stream && p.getY() == firstPoint.getY()+stream ){
+				p.setX(firstPoint.getX());
+				p.setY(firstPoint.getY());
+				p.setConnected(0);
 			}
 		}
 		
