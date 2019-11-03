@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.HomePage.HomePageController">
    <children>
       <TitledPane alignment="CENTER" animated="false" collapsible="false" ellipsisString="" layoutX="1.0" prefHeight="21.0" prefWidth="994.0" text="Home Electricity Monitor" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <content>
@@ -18,13 +17,14 @@
             <Font name="Tahoma" size="24.0" />
          </font>
       </TitledPane>
-      <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Home Layout" AnchorPane.bottomAnchor="550.0" AnchorPane.leftAnchor="425.0" AnchorPane.rightAnchor="425.0" AnchorPane.topAnchor="400.0" />
-      <Button layoutX="500.0" layoutY="450.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Appliances" AnchorPane.leftAnchor="500.0" AnchorPane.topAnchor="450.0" />
-      <Button layoutX="350.0" layoutY="450.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="New Home Layout" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="450.0" />
+      <Button fx:id="homeLayout" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Home Layout" AnchorPane.bottomAnchor="550.0" AnchorPane.leftAnchor="425.0" AnchorPane.rightAnchor="425.0" AnchorPane.topAnchor="400.0" />
+      <Button fx:id="appliances" layoutX="500.0" layoutY="450.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Appliances" AnchorPane.leftAnchor="500.0" AnchorPane.topAnchor="450.0" />
+      <Button fx:id="newHomeLayout" layoutX="350.0" layoutY="450.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="New Home Layout" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="450.0" />
       <ImageView fitHeight="371.0" fitWidth="605.0" layoutX="198.0" layoutY="557.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="103.9661865234375" AnchorPane.leftAnchor="198.0" AnchorPane.rightAnchor="197.0" AnchorPane.topAnchor="557.0">
          <image>
             <Image url="@../../../../../Downloads/IMG_6756.JPG" />
          </image>
       </ImageView>
+      <Button fx:id="test" layoutX="408.0" layoutY="208.0" mnemonicParsing="false" onAction="#onTestClick" prefHeight="123.0" prefWidth="185.0" text="Button" />
    </children>
 </AnchorPane>

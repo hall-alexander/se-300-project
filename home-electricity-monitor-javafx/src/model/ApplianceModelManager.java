@@ -1,9 +1,14 @@
 package model;
 
-public class ApplianceModelManager {
+public class ApplianceModelManager implements ApplianceModel{
+
+	private String text;
 	
-	double[] getValues(double[] arr) {
-		return arr;
+	@Override
+	public String getText() {
+		return text;
 	}
+	
+	
 	
 }
