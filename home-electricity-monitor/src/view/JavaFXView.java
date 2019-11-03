@@ -75,7 +75,7 @@ class Point {
     }
 }
 
-public class JavaFXView extends Application implements MouseListener, KeyListener {
+public class JavaFXView extends Application{
 	Button button = new Button();
 	Point prevPoint = null;
 	private ArrayList<Point> points;
@@ -83,61 +83,13 @@ public class JavaFXView extends Application implements MouseListener, KeyListene
 	public static void main(String[] args) {
 		launch(args);
 	}
-
-	@Override
-	public void keyPressed(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void keyReleased(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void keyTyped(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	//controller class for fxml file (basically what i have now except changing a few things to make it compatable
+	//scene builder
 	public void start(Stage primaryStage){
 		button.setText("Clear");
 		ArrayList<Point> points = new ArrayList<Point>();
 		int colorCode = 0;
 		primaryStage.setTitle("ALPHA Mapping Demo");
-		//StackPane layout = new StackPane(path);
 		Group root = new Group();
 		Canvas canvas = new Canvas(500, 550);
 		GraphicsContext gc = canvas.getGraphicsContext2D();
@@ -169,6 +121,9 @@ public class JavaFXView extends Application implements MouseListener, KeyListene
 							pp.getY() < firstPoint.getY()+20 ){
 						pp.setX(firstPoint.getX());
 						pp.setY(firstPoint.getY());
+					}
+					if (pp.getX() == firstPoint.getX() && pp.getY() == firstPoint.getY()){
+						
 					}
 				}
 			}
