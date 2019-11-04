@@ -1,8 +1,15 @@
 package view.HomePage;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 import viewmodel.HomePageViewModel;
 
 public class HomePageController {
@@ -14,7 +21,7 @@ public class HomePageController {
 	@FXML
 	Button appliances;
 	@FXML
-	Button test = new Button("Hellooo");
+	Button test;
 	
 	
 	private HomePageViewModel viewModel;
@@ -26,9 +33,11 @@ public class HomePageController {
 	
 	//init method is mainly used to bind properties between
 	//view (HomePageController) and the viewmodel (HomePageViewModel)
+	
+	//NO object creation in init method, only bindings
 	public void init(HomePageViewModel homePageViewModel) {
 		this.viewModel = homePageViewModel;
-		//this.test = new Button("Trial");
+		
 		test.textProperty().bindBidirectional(viewModel.buttonTextProperty());
 	}
 	
@@ -40,6 +49,20 @@ public class HomePageController {
 	public void onTestClick(ActionEvent actionEvent) {
 		viewModel.changeText();		
 		test.setText(test.getText());
+	}
+	
+	
+	public void changeScene(ActionEvent actionEvent) throws IOException {
+		Parent parent = null;
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/temp/temp.fxml"));
+		
+		parent = loader.load();
+		Scene mapperView = new Scene(parent);
+		
+		Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+		
+		window.setScene(mapperView);
+		window.show();
 	}
 	
 	
