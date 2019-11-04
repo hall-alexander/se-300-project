@@ -9,9 +9,12 @@ public class HomePageController {
 
 	@FXML
 	Button homeLayout;
+	@FXML
 	Button newHomeLayout;
+	@FXML
 	Button appliances;
-	Button test;
+	@FXML
+	Button test = new Button("Hellooo");
 	
 	
 	private HomePageViewModel viewModel;
@@ -25,8 +28,8 @@ public class HomePageController {
 	//view (HomePageController) and the viewmodel (HomePageViewModel)
 	public void init(HomePageViewModel homePageViewModel) {
 		this.viewModel = homePageViewModel;
-		this.test = new Button("Trial");
-		test.textProperty().bind(viewModel.buttonTextProperty());
+		//this.test = new Button("Trial");
+		test.textProperty().bindBidirectional(viewModel.buttonTextProperty());
 	}
 	
 	
@@ -35,7 +38,8 @@ public class HomePageController {
 	//some sort of functionality. In this case, when the test button was
 	//clicked, the viewModel will call the changeText() method.
 	public void onTestClick(ActionEvent actionEvent) {
-		viewModel.changeText();
+		viewModel.changeText();		
+		test.setText(test.getText());
 	}
 	
 	

@@ -25,6 +25,6 @@
             <Image url="@../../../../../Downloads/IMG_6756.JPG" />
          </image>
       </ImageView>
-      <Button fx:id="test" layoutX="408.0" layoutY="208.0" mnemonicParsing="false" onAction="#onTestClick" prefHeight="123.0" prefWidth="185.0" text="Button" />
+      <Button fx:id="test" layoutX="408.0" layoutY="208.0" mnemonicParsing="false" onAction="#onTestClick" prefHeight="123.0" prefWidth="185.0" />
    </children>
 </AnchorPane>

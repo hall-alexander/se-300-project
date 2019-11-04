@@ -7,30 +7,32 @@ import model.ApplianceModel;
 public class HomePageViewModel {
 
 	private int id;
-	private StringProperty buttonText;
+	private StringProperty buttonText = new SimpleStringProperty();
 	
 	private ApplianceModel model;
 	
 	public HomePageViewModel(ApplianceModel model) {
 		this.model = model;
-		buttonText = new SimpleStringProperty("Testing...");
 	}
 	
-	public String getText() {
-		return buttonText.get();
+	public final String getText() {
+		return this.buttonText.get();
 	}
 	
-	public void setText(String text) {
-		buttonText.set(text);
+	public final void setText(String text) {
+		this.buttonText.set(text);
 	}
 	
 	public StringProperty buttonTextProperty() {
-		return buttonText;
+		if (buttonText == null) {
+			this.buttonText = new SimpleStringProperty("Default");
+		}
+		return this.buttonText;
 	}
 
 	
 	public void changeText() {
-		buttonText.set("German science is the best in the world");
+		this.setText("change");
 	}
 	
 }
