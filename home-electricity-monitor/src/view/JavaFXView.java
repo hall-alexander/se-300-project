@@ -1,4 +1,4 @@
-package view.Mapper;
+package view;
 
 import java.awt.event.KeyEvent;
 
@@ -75,7 +75,7 @@ class Point {
     }
 }
 
-public class MapperController extends Application{
+public class JavaFXView extends Application{
 	Button button = new Button();
 	Point prevPoint = null;
 	private ArrayList<Point> points;
@@ -135,4 +135,3 @@ public class MapperController extends Application{
 		primaryStage.show();
 	}
 }
-
