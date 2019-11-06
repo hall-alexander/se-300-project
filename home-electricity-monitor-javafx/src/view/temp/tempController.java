@@ -27,6 +27,8 @@ public class tempController {
 		FileInputStream input = new FileInputStream("images/oven.png");
 		Image imagefile = new Image(input);
 		ImageView image = new ImageView(imagefile);
+		image.setFitHeight(60);
+		image.setFitWidth(60);
 		MouseControlUtil.makeDraggable(image);
 		root.getChildren().add(image);
 	}
