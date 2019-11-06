@@ -1,7 +1,6 @@
 package view.HomePage;
 
 import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -54,13 +53,12 @@ public class HomePageController {
 	
 	public void changeScene(ActionEvent actionEvent) throws IOException {
 		Parent parent = null;
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/temp/temp.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/temp/Temp.fxml"));
 		
 		parent = loader.load();
 		Scene mapperView = new Scene(parent);
 		
 		Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-		
 		window.setScene(mapperView);
 		window.show();
 	}
