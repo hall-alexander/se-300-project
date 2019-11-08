@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
-<?import jfxtras.labs.scene.layout.ScalableContentPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.temp.tempController">
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.temp.tempController">
    <center>
-      <ScalableContentPane fx:id="root" prefHeight="813.0" prefWidth="740.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button fx:id="icon" alignment="CENTER" mnemonicParsing="false" onAction="#onIconClick" text="Button" />
-         </children>
-      </ScalableContentPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="226.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="5.0" width="407.0" BorderPane.alignment="CENTER" />
    </center>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuButton fx:id="applianceSelection" mnemonicParsing="false" text="Appliances">
+              <items>
+                <MenuItem fx:id="airConditioner" mnemonicParsing="false" onAction="#addAirConditioner" text="Air Conditioner" />
+                <MenuItem fx:id="computer" mnemonicParsing="false" onAction="#addComputer" text="Computer" />
+                <MenuItem fx:id="microwave" mnemonicParsing="false" onAction="#addMicrowave" text="Microwave" />
+                  <MenuItem fx:id="oven" mnemonicParsing="false" onAction="#addOven" text="Oven" />
+                  <MenuItem fx:id="television" mnemonicParsing="false" onAction="#addTelevision" text="Television" />
+                  <MenuItem fx:id="washingMachine" mnemonicParsing="false" onAction="#addWashingMachine" text="Washing Machine" />
+              </items>
+            </MenuButton>
+         </children>
+      </VBox>
+   </left>
 </BorderPane>
