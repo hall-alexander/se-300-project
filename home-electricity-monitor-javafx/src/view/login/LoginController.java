@@ -19,7 +19,7 @@ import javafx.fxml.Initializable;
 //import javafx.scene.control.DatePicker;
 import javafx.scene.control.*;
 import javafx.stage.Window;
-
+import view.chart.ChartController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
