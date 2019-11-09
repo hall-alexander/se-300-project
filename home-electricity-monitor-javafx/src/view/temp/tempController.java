@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.shape.Rectangle;
 import jfxtras.labs.util.event.MouseControlUtil;
 
 public class tempController {
@@ -113,6 +114,7 @@ public class tempController {
 		addAppliance(appliance);
 	}
 
+	
 	
 }
 

@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import view.ViewHandler;
 import viewmodel.HomePageViewModel;
 
 public class HomePageController {
@@ -16,7 +17,7 @@ public class HomePageController {
 	@FXML
 	Button homeLayout;
 	@FXML
-	Button newHomeLayout;
+	Button temp;
 	@FXML
 	Button appliances;
 	@FXML
@@ -24,7 +25,6 @@ public class HomePageController {
 	
 	
 	private HomePageViewModel viewModel;
-	
 	
 	public HomePageController() {
 	
@@ -51,7 +51,12 @@ public class HomePageController {
 	}
 	
 	
-	public void changeScene(ActionEvent actionEvent) throws IOException {
+	public void setViewHandler(ViewHandler viewHandler) {
+		viewModel.setViewHandler(viewHandler);
+	}
+	
+	/*
+	public void changeScene_old(ActionEvent actionEvent) throws IOException {
 		Parent parent = null;
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/temp/Temp.fxml"));
 		
@@ -61,6 +66,15 @@ public class HomePageController {
 		Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
 		window.setScene(mapperView);
 		window.show();
+	}*/
+	
+	public void changeScene(ActionEvent actionEvent) throws IOException {
+		String view = null;
+		Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+		
+		view = ((Button)actionEvent.getSource()).getText();
+		viewModel.getViewHandler().changeScene(view, window);
+		
 	}
 	
 	

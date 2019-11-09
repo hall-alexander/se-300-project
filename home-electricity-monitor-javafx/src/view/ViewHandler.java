@@ -6,7 +6,9 @@ import viewmodel.ViewModelFactory;
 
 import java.io.IOException;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -30,8 +32,6 @@ public class ViewHandler {
 		FXMLLoader loader = new FXMLLoader();
 		Parent root = null;
 		
-		//issues https://intellij-support.jetbrains.com/hc/en-us/community/posts/115000640524-fx-controller-classNotFoundException-plugin-development
-		
 		loader.setClassLoader(getClass().getClassLoader());
 		loader.setLocation(getClass().getResource(viewToOpen.toLowerCase()+"/"+ viewToOpen + ".fxml")); //should be HomePage/HomePage.fxml
 
@@ -39,12 +39,25 @@ public class ViewHandler {
 		if("HomePage".equals(viewToOpen)) {
 			HomePageController view = loader.getController();
 			view.init(mvViewModel.getHomePageViewModel()); //make homepage viewmodel
+			view.setViewHandler(this); //galaxy brain right here
 			stage.setTitle("HomePage");
 		}
 		
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
+	}
+	
+	public void changeScene(String view, Stage window) throws IOException {
+		Parent parent = null;
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/" + view.toLowerCase() + "/" + view + ".fxml"));
+
+		parent = loader.load();
+		Scene scene = new Scene(parent);
+		
+		window.setScene(scene);
+		window.setTitle(view);
+		window.show();
 	}
 	
 }

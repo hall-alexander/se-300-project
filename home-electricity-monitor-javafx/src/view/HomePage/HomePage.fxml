@@ -17,9 +17,9 @@
             <Font name="Tahoma" size="24.0" />
          </font>
       </TitledPane>
-      <Button fx:id="homeLayout" layoutX="425.0" layoutY="275.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Home Layout" AnchorPane.bottomAnchor="675.0" AnchorPane.leftAnchor="425.0" AnchorPane.rightAnchor="425.0" AnchorPane.topAnchor="275.0" />
-      <Button fx:id="appliances" layoutX="425.0" layoutY="450.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Appliances" AnchorPane.leftAnchor="425.0" AnchorPane.topAnchor="450.0" />
-      <Button fx:id="newHomeLayout" layoutX="425.0" layoutY="363.0" mnemonicParsing="false" onAction="#changeScene" prefHeight="50.0" prefWidth="150.0" text="New Home Layout" AnchorPane.leftAnchor="425.0" AnchorPane.topAnchor="363.0" />
+      <Button fx:id="homeLayout" layoutX="425.0" layoutY="275.0" mnemonicParsing="false" onAction="#changeScene" prefHeight="50.0" prefWidth="150.0" text="Home Layout" AnchorPane.bottomAnchor="675.0" AnchorPane.leftAnchor="425.0" AnchorPane.rightAnchor="425.0" AnchorPane.topAnchor="275.0" />
+      <Button fx:id="appliances" layoutX="425.0" layoutY="450.0" mnemonicParsing="false" onAction="#changeScene" prefHeight="50.0" prefWidth="150.0" text="Appliances" AnchorPane.leftAnchor="425.0" AnchorPane.topAnchor="450.0" />
+      <Button fx:id="newHomeLayout" layoutX="425.0" layoutY="363.0" mnemonicParsing="false" onAction="#changeScene" prefHeight="50.0" prefWidth="150.0" text="Temp" AnchorPane.leftAnchor="425.0" AnchorPane.topAnchor="363.0" />
       <ImageView fitHeight="371.0" fitWidth="605.0" layoutX="198.0" layoutY="557.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="103.9661865234375" AnchorPane.leftAnchor="198.0" AnchorPane.rightAnchor="197.0" AnchorPane.topAnchor="557.0">
          <image>
             <Image url="@../../../images/softwareWithDaBois.jpg" />

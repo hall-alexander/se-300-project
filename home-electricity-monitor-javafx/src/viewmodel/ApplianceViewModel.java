@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javafx.beans.property.SimpleStringProperty;
 import model.ApplianceModel;
+import view.ViewHandler;
 
 
 public class ApplianceViewModel {
@@ -16,9 +17,21 @@ public class ApplianceViewModel {
 	private String name;
 	private int id;
 	
+	private ViewHandler viewHandler;
+	
 	
 	public ApplianceViewModel(ApplianceModel model) {
 		this.model = model;
+	}
+
+
+	public ViewHandler getViewHandler() {
+		return viewHandler;
+	}
+
+
+	public void setViewHandler(ViewHandler viewHandler) {
+		this.viewHandler = viewHandler;
 	}
 	
 }
