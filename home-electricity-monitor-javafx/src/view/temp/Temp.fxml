@@ -13,7 +13,7 @@
    <left>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <MenuButton fx:id="applianceSelection" mnemonicParsing="false" text="Appliances">
+            <MenuButton fx:id="applianceSelection" mnemonicParsing="false" prefWidth="90.0" text="Appliances">
               <items>
                 <MenuItem fx:id="airConditioner" mnemonicParsing="false" onAction="#addAirConditioner" text="Air Conditioner" />
                 <MenuItem fx:id="computer" mnemonicParsing="false" onAction="#addComputer" text="Computer" />
