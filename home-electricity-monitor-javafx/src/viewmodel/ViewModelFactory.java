@@ -6,10 +6,12 @@ public class ViewModelFactory {
 
 	private ApplianceViewModel applianceViewModel;
 	private HomePageViewModel homePageViewModel;
+	private LoginViewModel loginViewModel;
 	
 	public ViewModelFactory(ModelFactory mf) {
 		homePageViewModel = new HomePageViewModel(mf.getApplicanceModel());
 		applianceViewModel = new ApplianceViewModel(mf.getApplicanceModel());
+		setLoginViewModel(new LoginViewModel(mf.getApplicanceModel()));
 	}
 
 	public HomePageViewModel getHomePageViewModel() {
@@ -26,6 +28,14 @@ public class ViewModelFactory {
 
 	public void setApplianceViewModel(ApplianceViewModel applianceViewModel) {
 		this.applianceViewModel = applianceViewModel;
+	}
+
+	public LoginViewModel getLoginViewModel() {
+		return loginViewModel;
+	}
+
+	public void setLoginViewModel(LoginViewModel loginViewModel) {
+		this.loginViewModel = loginViewModel;
 	}
 	
 	

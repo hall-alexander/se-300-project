@@ -2,6 +2,7 @@ package view;
 
 import view.HomePage.HomePageController;
 import view.Mapper.MapperController;
+import view.login.LoginController;
 import viewmodel.ViewModelFactory;
 
 import java.io.IOException;
@@ -50,11 +51,24 @@ public class ViewHandler {
 	
 	public void changeScene(String view, Stage window) throws IOException {
 		Parent parent = null;
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/" + view.toLowerCase() + "/" + view + ".fxml"));
+		FXMLLoader loader = new FXMLLoader();
 
-		parent = loader.load();
-		Scene scene = new Scene(parent);
+		loader.setClassLoader(getClass().getClassLoader());
+		loader.setLocation(getClass().getResource("/view/" + view.toLowerCase() + "/" + view + ".fxml"));
 		
+		parent = loader.load();
+		if("HomePage".equals(view)) {
+			HomePageController viewController = loader.getController();
+			viewController.init(mvViewModel.getHomePageViewModel()); //make homepage viewmodel
+			viewController.setViewHandler(this); //galaxy brain right here
+		}
+		else if("Login".equals(view)) {
+			LoginController viewController = loader.getController();
+			viewController.init(mvViewModel.getLoginViewModel()); 
+			viewController.setViewHandler(this); 
+		}
+		
+		Scene scene = new Scene(parent);
 		window.setScene(scene);
 		window.setTitle(view);
 		window.show();
