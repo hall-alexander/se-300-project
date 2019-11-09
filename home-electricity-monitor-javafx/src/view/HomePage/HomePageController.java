@@ -30,21 +30,12 @@ public class HomePageController {
 	
 	}
 	
-	//init method is mainly used to bind properties between
-	//view (HomePageController) and the viewmodel (HomePageViewModel)
-	
-	//NO object creation in init method, only bindings
 	public void init(HomePageViewModel homePageViewModel) {
 		this.viewModel = homePageViewModel;
 		
 		test.textProperty().bindBidirectional(viewModel.buttonTextProperty());
 	}
 	
-	
-	//This is what a lot of button methods will look like. Whenever user
-	//clicks button in view. The viewModel will handle that event with
-	//some sort of functionality. In this case, when the test button was
-	//clicked, the viewModel will call the changeText() method.
 	public void onTestClick(ActionEvent actionEvent) {
 		viewModel.changeText();		
 		test.setText(test.getText());
