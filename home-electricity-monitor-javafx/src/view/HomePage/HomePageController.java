@@ -19,7 +19,8 @@ public class HomePageController {
 	Button appliances;
 	@FXML
 	Button login;
-	
+	@FXML
+	Button mapper;
 	
 	private HomePageViewModel viewModel;
 	

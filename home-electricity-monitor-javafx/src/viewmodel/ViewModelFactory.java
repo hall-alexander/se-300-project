@@ -7,11 +7,14 @@ public class ViewModelFactory {
 	private ApplianceViewModel applianceViewModel;
 	private HomePageViewModel homePageViewModel;
 	private LoginViewModel loginViewModel;
+	private MappingViewModel mappingViewModel;
 	
 	public ViewModelFactory(ModelFactory mf) {
 		homePageViewModel = new HomePageViewModel(mf.getApplicanceModel());
 		applianceViewModel = new ApplianceViewModel(mf.getApplicanceModel());
+
 		setLoginViewModel(new LoginViewModel(mf.getApplicanceModel()));
+		mappingViewModel = new MappingViewModel(mf.getApplicanceModel());
 	}
 
 	public HomePageViewModel getHomePageViewModel() {
@@ -37,8 +40,13 @@ public class ViewModelFactory {
 	public void setLoginViewModel(LoginViewModel loginViewModel) {
 		this.loginViewModel = loginViewModel;
 	}
-	
-	
-	
+
+	public MappingViewModel getMappingViewModel() {
+		return mappingViewModel;
+	}
+
+	public void setMappingViewModel(MappingViewModel mappingViewModel) {
+		this.mappingViewModel = mappingViewModel;
+	}
 	
 }
