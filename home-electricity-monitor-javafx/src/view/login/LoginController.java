@@ -1,37 +1,10 @@
 package view.login;
 
-import java.net.URL;
-import java.text.*;
-import java.time.LocalTime;
-import java.util.*;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ThreadLocalRandom;
-import java.util.concurrent.TimeUnit;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-//import javafx.scene.control.Button;
-//import javafx.scene.control.TextField;
-//import javafx.scene.control.ChoiceBox;
-//import javafx.scene.control.Spinner;
-//import javafx.scene.control.DatePicker;
 import javafx.scene.control.*;
-import javafx.stage.Window;
 import view.ViewHandler;
-import view.chart.ChartController;
-import viewmodel.HomePageViewModel;
 import viewmodel.LoginViewModel;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.chart.XYChart;
-import javafx.stage.Stage;
-
-import javafx.application.Platform;
-import javafx.scene.chart.LineChart;
-import javafx.scene.chart.XYChart;
 
 
 public class LoginController {

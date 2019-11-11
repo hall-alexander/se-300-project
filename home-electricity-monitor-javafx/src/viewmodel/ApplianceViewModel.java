@@ -1,8 +1,6 @@
 package viewmodel;
 
 import java.util.Date;
-
-import javafx.beans.property.SimpleStringProperty;
 import model.ApplianceModel;
 import view.ViewHandler;
 

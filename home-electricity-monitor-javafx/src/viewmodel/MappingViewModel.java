@@ -1,9 +1,6 @@
 package viewmodel;
 
 import java.util.ArrayList;
-import java.util.Date;
-
-import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.shape.Line;
 import model.ApplianceModel;
 import view.ViewHandler;

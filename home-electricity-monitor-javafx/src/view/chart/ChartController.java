@@ -1,15 +1,11 @@
 package view.chart;
 
 import java.net.URL;
-//import java.time.LocalTime;
 import java.util.*;
- 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-//import javafx.scene.control.*;
 import javafx.scene.chart.LineChart;
-import javafx.scene.chart.XYChart;
-//import javafx.stage.Window;
+
 
 public class ChartController implements Initializable {
 	
