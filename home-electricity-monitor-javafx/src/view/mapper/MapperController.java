@@ -6,9 +6,10 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Line;
 import jfxtras.labs.util.event.MouseControlUtil;
+import view.ViewHandler;
 import viewmodel.MappingViewModel;
 
-public class MapperController{
+public class MapperController {
 	
 	@FXML
 	Button verticalLineButton;
@@ -44,6 +45,13 @@ public class MapperController{
 		//System.out.println(lines);
 		mapperPane.getChildren().add(line);
 		MouseControlUtil.makeDraggable(line);
+	}
+
+
+
+	public void setViewHandler(ViewHandler viewHandler) {
+		viewModel.setViewHandler(viewHandler);
+		
 	}
 }
 

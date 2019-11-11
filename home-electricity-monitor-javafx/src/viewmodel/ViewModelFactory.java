@@ -11,6 +11,7 @@ public class ViewModelFactory {
 	public ViewModelFactory(ModelFactory mf) {
 		homePageViewModel = new HomePageViewModel(mf.getApplicanceModel());
 		applianceViewModel = new ApplianceViewModel(mf.getApplicanceModel());
+		mappingViewModel = new MappingViewModel(mf.getApplicanceModel());
 	}
 
 	public HomePageViewModel getHomePageViewModel() {

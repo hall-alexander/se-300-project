@@ -68,6 +68,12 @@ public class ViewHandler {
 			viewController.setViewHandler(this); 
 		}*/
 		
+		else if("Mapper".equals(view)) {
+			MapperController viewController = loader.getController();
+			viewController.init(mvViewModel.getMappingViewModel()); //make homepage viewmodel
+			viewController.setViewHandler(this); //galaxy brain right here
+		}
+		
 		Scene scene = new Scene(parent);
 		window.setScene(scene);
 		window.setTitle(view);
