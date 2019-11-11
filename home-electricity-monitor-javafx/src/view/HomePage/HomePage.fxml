@@ -25,6 +25,6 @@
             <Image url="@../../../images/softwareWithDaBois.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="test" layoutX="425.0" layoutY="198.0" mnemonicParsing="false" onAction="#onTestClick" prefHeight="50.0" prefWidth="150.0" wrapText="true" />
+      <Button fx:id="login" layoutX="425.0" layoutY="198.0" mnemonicParsing="false" onAction="#changeScene" prefHeight="50.0" prefWidth="150.0" text="Login" wrapText="true" />
    </children>
 </AnchorPane>

@@ -1,6 +1,7 @@
 package view;
 
 import view.HomePage.HomePageController;
+import view.login.LoginController;
 import view.mapper.MapperController;
 import viewmodel.ViewModelFactory;
 
@@ -61,12 +62,12 @@ public class ViewHandler {
 			viewController.init(mvViewModel.getHomePageViewModel()); //make homepage viewmodel
 			viewController.setViewHandler(this); //galaxy brain right here
 		}
-		/*
+		
 		else if("Login".equals(view)) {
 			LoginController viewController = loader.getController();
 			viewController.init(mvViewModel.getLoginViewModel()); 
 			viewController.setViewHandler(this); 
-		}*/
+		
 		
 		else if("Mapper".equals(view)) {
 			MapperController viewController = loader.getController();

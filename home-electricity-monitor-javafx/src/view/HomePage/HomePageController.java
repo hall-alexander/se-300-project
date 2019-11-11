@@ -3,10 +3,7 @@ package view.HomePage;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import view.ViewHandler;
@@ -21,10 +18,9 @@ public class HomePageController {
 	@FXML
 	Button appliances;
 	@FXML
-	Button test;
+	Button login;
 	@FXML
 	Button mapper;
-	
 	
 	private HomePageViewModel viewModel;
 	
@@ -35,12 +31,6 @@ public class HomePageController {
 	public void init(HomePageViewModel homePageViewModel) {
 		this.viewModel = homePageViewModel;
 		
-		test.textProperty().bindBidirectional(viewModel.buttonTextProperty());
-	}
-	
-	public void onTestClick(ActionEvent actionEvent) {
-		viewModel.changeText();		
-		test.setText(test.getText());
 	}
 	
 	
