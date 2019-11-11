@@ -57,6 +57,7 @@ public class ViewHandler {
 		loader.setLocation(getClass().getResource("/view/" + view.toLowerCase() + "/" + view + ".fxml"));
 		
 		parent = loader.load();
+		
 		if("HomePage".equals(view)) {
 			HomePageController viewController = loader.getController();
 			viewController.init(mvViewModel.getHomePageViewModel()); //make homepage viewmodel
@@ -66,8 +67,8 @@ public class ViewHandler {
 		else if("Login".equals(view)) {
 			LoginController viewController = loader.getController();
 			viewController.init(mvViewModel.getLoginViewModel()); 
-			viewController.setViewHandler(this); 
-		
+			viewController.setViewHandler(this);
+		}
 		
 		else if("Mapper".equals(view)) {
 			MapperController viewController = loader.getController();

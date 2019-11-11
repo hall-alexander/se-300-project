@@ -12,8 +12,7 @@ public class ViewModelFactory {
 	public ViewModelFactory(ModelFactory mf) {
 		homePageViewModel = new HomePageViewModel(mf.getApplicanceModel());
 		applianceViewModel = new ApplianceViewModel(mf.getApplicanceModel());
-
-		setLoginViewModel(new LoginViewModel(mf.getApplicanceModel()));
+		loginViewModel = new LoginViewModel(mf.getApplicanceModel());
 		mappingViewModel = new MappingViewModel(mf.getApplicanceModel());
 	}
 
