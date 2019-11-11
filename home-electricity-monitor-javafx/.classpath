@@ -4,17 +4,7 @@
 	<classpathentry kind="src" path="images"/>
 	<classpathentry kind="src" path="lib"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/LethalCaffeine/Downloads/jfxtras-test-support-10.0-r1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/LethalCaffeine/Downloads/jfxtras-icalendarfx-10.0-r1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/LethalCaffeine/Downloads/jfxtras-menu-10.0-r1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/LethalCaffeine/Downloads/jfxtras-window-10.0-r1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/LethalCaffeine/Downloads/jfxtras-agenda-10.0-r1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/LethalCaffeine/Downloads/openjfx-monocle-1.8.0_20.jar"/>
-	<classpathentry kind="lib" path="C:/Users/LethalCaffeine/Downloads/jfxtras-all-10.0-r1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/LethalCaffeine/Downloads/jfxtras-controls-10.0-r1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/LethalCaffeine/Downloads/jfxtras-common-10.0-r1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/LethalCaffeine/Downloads/jfxtras-fxml-10.0-r1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/LethalCaffeine/Downloads/jfxtras-labs-8.0-r6.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/JFXtras User Library"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

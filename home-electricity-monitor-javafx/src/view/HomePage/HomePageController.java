@@ -22,6 +22,8 @@ public class HomePageController {
 	Button appliances;
 	@FXML
 	Button test;
+	@FXML
+	Button mapper;
 	
 	
 	private HomePageViewModel viewModel;

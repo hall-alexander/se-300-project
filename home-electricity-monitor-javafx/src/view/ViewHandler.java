@@ -1,7 +1,7 @@
 package view;
 
 import view.HomePage.HomePageController;
-import view.Mapper.MapperController;
+import view.mapper.MapperController;
 import viewmodel.ViewModelFactory;
 
 import java.io.IOException;
