@@ -1,24 +1,21 @@
 package viewmodel;
 
-import java.util.Date;
+import java.util.ArrayList;
+import javafx.scene.shape.Line;
 import model.ApplianceModel;
 import view.ViewHandler;
 
 
-public class ApplianceViewModel {
+public class MappingViewModel {
 	
 	private ApplianceModel model;
 	
-	private Date timeDuration;
-	private double wattage;
-	private double cost;
-	private String name;
-	private int id;
+	public ArrayList<Line> lines = new ArrayList<Line>();
 	
 	private ViewHandler viewHandler;
 	
 	
-	public ApplianceViewModel(ApplianceModel model) {
+	public MappingViewModel(ApplianceModel model) {
 		this.model = model;
 	}
 

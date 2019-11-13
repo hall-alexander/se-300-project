@@ -2,7 +2,7 @@ package model;
 
 public interface ApplianceModel {
 	
-	double getValues();
+	String getText();
 	
 	
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.temp.tempController">
+   <center>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="226.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="5.0" width="407.0" BorderPane.alignment="CENTER" />
+   </center>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuButton fx:id="applianceSelection" mnemonicParsing="false" prefWidth="90.0" text="Appliances">
+              <items>
+                <MenuItem fx:id="airConditioner" mnemonicParsing="false" onAction="#addAirConditioner" text="Air Conditioner" />
+                <MenuItem fx:id="computer" mnemonicParsing="false" onAction="#addComputer" text="Computer" />
+                <MenuItem fx:id="microwave" mnemonicParsing="false" onAction="#addMicrowave" text="Microwave" />
+                  <MenuItem fx:id="oven" mnemonicParsing="false" onAction="#addOven" text="Oven" />
+                  <MenuItem fx:id="television" mnemonicParsing="false" onAction="#addTelevision" text="Television" />
+                  <MenuItem fx:id="washingMachine" mnemonicParsing="false" onAction="#addWashingMachine" text="Washing Machine" />
+              </items>
+            </MenuButton>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
