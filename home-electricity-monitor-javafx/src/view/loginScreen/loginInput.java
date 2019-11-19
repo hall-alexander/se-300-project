@@ -6,8 +6,8 @@ import java.io.FileWriter;
 
 public class loginInput {
 
-	public void createFile(File loginFile) {
-		loginFile = new File("loginFile.csv");
+	public void createFile() {
+		File loginFile = new File("loginFile.csv");
 
 		try {
 			//write the file
