@@ -1,4 +1,4 @@
-package view.ApplicationSelection;
+package view.ApplianceSelectionPage;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
