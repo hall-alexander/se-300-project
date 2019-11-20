@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.mapper.MapperController">
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.mapper.MapperController">
    <top>
       <TabPane prefHeight="115.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
@@ -16,9 +19,19 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="59.0" prefWidth="600.0">
                      <children>
-                        <Button fx:id="verticalLineButton" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#verticalButtonClicked" text="Veritcal" />
-                        <Button fx:id="horizontalLineButton" layoutX="125.0" layoutY="14.0" mnemonicParsing="false" onAction="#horizontalButtonClicked" text="Horizontal" />
+                        <Button fx:id="verticalLineButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#verticalButtonClicked" prefHeight="40.0" prefWidth="120.0" text="Veritcal" />
+                        <Button fx:id="horizontalLineButton" layoutX="150.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#horizontalButtonClicked" prefHeight="40.0" prefWidth="120.0" text="Horizontal" />
                         <Separator layoutX="-22.0" layoutY="55.0" prefHeight="2.0" prefWidth="625.0" />
+                        <MenuButton fx:id="applianceSelection" layoutX="291.0" layoutY="14.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Appliances">
+                          <items>
+                            <MenuItem fx:id="airConditioner" mnemonicParsing="false" onAction="#addAirConditioner" text="Air Conditioner" />
+                            <MenuItem fx:id="computer" mnemonicParsing="false" onAction="#addComputer" text="Computer" />
+                              <MenuItem fx:id="microwave" mnemonicParsing="false" onAction="#addMicrowave" text="Microwave" />
+                              <MenuItem fx:id="oven" mnemonicParsing="false" onAction="#addOven" text="Oven" />
+                              <MenuItem fx:id="television" mnemonicParsing="false" onAction="#addTelevision" text="Television" />
+                              <MenuItem fx:id="washingMachine" mnemonicParsing="false" onAction="#addWashingMachine" text="Washing Machine" />
+                          </items>
+                        </MenuButton>
                      </children>
                   </AnchorPane>
             </content>
@@ -32,6 +45,9 @@
       </TabPane>
    </top>
    <center>
-      <Pane fx:id="mapperPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <Pane fx:id="mapperPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="550.0" layoutX="62.0" layoutY="40.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="5.0" width="900.0" />
+         </children></Pane>
    </center>
 </BorderPane>
