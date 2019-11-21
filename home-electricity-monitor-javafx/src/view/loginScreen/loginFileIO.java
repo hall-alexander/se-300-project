@@ -23,11 +23,8 @@ public class loginFileIO {
 		System.out.println("\nEnter a Password:");
 		password = scanner.nextLine();
 		
-		loginInput.saveLogin(filename, username, password);
-		loginRead.readLogin(filename, username, password);
-		
-		System.out.println("what the fuck you are a cucumber");
-		
+		//loginInput.saveLogin(filename, username, password);
+		loginRead.readLogin(filename, username, password);		
 		scanner.close();
 		
 		

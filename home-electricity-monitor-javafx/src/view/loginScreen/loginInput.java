@@ -6,17 +6,16 @@ import java.io.FileWriter;
 
 public class loginInput {
 	
-	private static File loginFile;
+	private static File loginFile = new File("loginFile.csv");
+
 
 
 	public void saveLogin(String filename, String username, String password) {
 
 
 		try {
-			//create the file
-			loginFile = new File(filename + ".csv");
 			//write to the file
-			FileWriter fileWriter = new FileWriter(loginFile);
+			FileWriter fileWriter = new FileWriter(loginFile, true);
 			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 			bufferedWriter.write(username + ',' + password);
 			bufferedWriter.newLine();
