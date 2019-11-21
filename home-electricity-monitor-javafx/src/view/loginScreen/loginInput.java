@@ -5,23 +5,27 @@ import java.io.File;
 import java.io.FileWriter;
 
 public class loginInput {
+	
+	private static File loginFile;
 
-	public void createFile() {
-		File loginFile = new File("loginFile.csv");
+
+	public void saveLogin(String filename, String username, String password) {
+
 
 		try {
-			//write the file
+			//create the file
+			loginFile = new File(filename + ".csv");
+			//write to the file
 			FileWriter fileWriter = new FileWriter(loginFile);
 			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-			bufferedWriter.write("I am a cheesecake");
+			bufferedWriter.write(username + ',' + password);
 			bufferedWriter.newLine();
-			bufferedWriter.write("please bring me death");
-			bufferedWriter.newLine();
-
 			bufferedWriter.close();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		System.out.println("Login Saved!");
 	}
 }
