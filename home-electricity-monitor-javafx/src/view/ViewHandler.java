@@ -3,6 +3,7 @@ package view;
 import view.HomePage.HomePageController;
 import view.login.LoginController;
 import view.mapper.MapperController;
+import view.simulation.SimulationController;
 import viewmodel.ViewModelFactory;
 import java.io.IOException;
 import javafx.fxml.FXMLLoader;
@@ -69,6 +70,11 @@ public class ViewHandler {
 		else if("Mapper".equals(view)) {
 			MapperController viewController = loader.getController();
 			viewController.init(mvViewModel.getMappingViewModel()); //make homepage viewmodel
+			viewController.setViewHandler(this); //galaxy brain right here
+		}
+		else if("Simulation".equals(view)) {
+			SimulationController viewController = loader.getController();
+			viewController.init(mvViewModel.getSimulationViewModel()); //make homepage viewmodel
 			viewController.setViewHandler(this); //galaxy brain right here
 		}
 		
