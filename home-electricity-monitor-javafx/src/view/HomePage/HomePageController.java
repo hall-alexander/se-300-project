@@ -14,8 +14,6 @@ public class HomePageController {
 	@FXML
 	Button homeLayout;
 	@FXML
-	Button temp;
-	@FXML
 	Button appliances;
 	@FXML
 	Button login;
