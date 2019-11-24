@@ -25,5 +25,6 @@
          </image>
       </ImageView>
       <Button fx:id="login" layoutX="425.0" layoutY="198.0" mnemonicParsing="false" onAction="#changeScene" prefHeight="50.0" prefWidth="150.0" text="Login" wrapText="true" />
+      <Button fx:id="simulation" layoutX="425.0" layoutY="439.0" mnemonicParsing="false" onAction="#changeScene" prefHeight="50.0" prefWidth="150.0" text="Simulation" />
    </children>
 </AnchorPane>
