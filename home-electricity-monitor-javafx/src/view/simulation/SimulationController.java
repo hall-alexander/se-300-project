@@ -3,6 +3,7 @@ package view.simulation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import view.ViewHandler;
 import viewmodel.SimulationViewModel;
 
@@ -23,7 +24,7 @@ public class SimulationController {
 	
 	
 	
-	public void imageClick(ActionEvent event) {
+	public void imageClick(MouseEvent event) {
 		
 		viewModel.getTimer().start();
 		
