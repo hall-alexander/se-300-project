@@ -19,6 +19,8 @@ public class SimulationController {
 		this.viewModel = simulationViewModel;
 		
 		image.opacityProperty().bind(viewModel.opacityProperty());
+		image.effectProperty().bind(viewModel.effectProperty());
+		
 	}
 	
 	

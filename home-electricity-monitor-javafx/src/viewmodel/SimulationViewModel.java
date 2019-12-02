@@ -1,16 +1,22 @@
 package viewmodel;
 
 import javafx.animation.AnimationTimer;
+import javafx.animation.Timeline;
 import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.scene.effect.Effect;
+import javafx.scene.effect.Glow;
 import model.ApplianceModel;
 import view.ViewHandler;
 
 public class SimulationViewModel {
 
 	private DoubleProperty opacity;
+	private ObjectProperty<Glow> effect;
 	private ViewHandler viewHandler;
 	private AnimationTimer timer;
+	private Timeline timeline;
 	
 	private ApplianceModel model;
 	
@@ -18,7 +24,11 @@ public class SimulationViewModel {
 		this.model = model;
 		
 		this.setTimer(new MyTimer());
+		this.setTimeline(new Timeline());
+		this.setEffect(new Glow());
 	}
+	
+	
 	
 	private class MyTimer extends AnimationTimer {
 		
@@ -30,6 +40,10 @@ public class SimulationViewModel {
 		public void doHandle() {
 			
 			setOpacity(getOpacity() - 0.01);
+			
+			
+			
+			
 
 			if (getOpacity() <= 0) {
 				stop();
@@ -39,7 +53,11 @@ public class SimulationViewModel {
 		
 	}
 	
-		
+	
+	public void simulationRun() {
+		getTimeline().setAutoReverse(false);
+		//getTimeline().getKeyFrames().add
+	}
 	
 	
 	public final Double getOpacity() {
@@ -56,6 +74,22 @@ public class SimulationViewModel {
 		}
 		return this.opacity;
 	}
+	
+	
+	public final Effect getEffect() {
+		return this.effect.get();
+	}
+	
+	public final void setEffect(Glow value) {
+		this.effect.set(value);
+	}
+	
+	public ObjectProperty<Glow> effectProperty() {
+		return this.effect;
+	}
+	
+	
+	
 
 	public AnimationTimer getTimer() {
 		return timer;
@@ -63,6 +97,14 @@ public class SimulationViewModel {
 
 	public void setTimer(AnimationTimer timer) {
 		this.timer = timer;
+	}
+
+	public Timeline getTimeline() {
+		return timeline;
+	}
+
+	public void setTimeline(Timeline timeline) {
+		this.timeline = timeline;
 	}
 
 	public ViewHandler getViewHandler() {

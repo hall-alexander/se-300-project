@@ -93,6 +93,7 @@ public class MapperController {
 		image.setFitWidth(100);
 		MouseControlUtil.makeDraggable(image);
 		
+		
 		image.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
 		     @Override
 		     public void handle(MouseEvent event) {
