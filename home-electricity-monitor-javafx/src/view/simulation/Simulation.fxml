@@ -11,17 +11,17 @@
    <center>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" layoutX="154.0" layoutY="203.0" onMouseClicked="#imageClick" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" layoutX="154.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../images/washing-machine.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imageb" fitHeight="150.0" fitWidth="200.0" layoutX="353.0" layoutY="203.0" onMouseClicked="#imageClick" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imageb" fitHeight="150.0" fitWidth="200.0" layoutX="353.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../images/oven.png" />
                </image>
             </ImageView>
-            <Button fx:id="simulation" layoutX="279.0" layoutY="389.0" mnemonicParsing="false" onAction="#imageClick" prefHeight="61.0" prefWidth="107.0" text="Run simulation" />
+            <Button fx:id="simulation" layoutX="279.0" layoutY="389.0" mnemonicParsing="false" onAction="#simulationRun" prefHeight="61.0" prefWidth="107.0" text="Run simulation" />
             <Label fx:id="timeLabel" alignment="CENTER" layoutX="243.0" layoutY="98.0" prefHeight="81.0" prefWidth="180.0" text="00:00:00" textAlignment="CENTER" />
          </children>
       </Pane>
