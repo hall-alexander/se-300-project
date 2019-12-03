@@ -23,9 +23,6 @@ public class SimulationViewModel {
 	public SimulationViewModel(ApplianceModel model) {
 		this.model = model;
 		
-		this.setTimer(new MyTimer());
-		this.setTimeline(new Timeline());
-		this.setEffect(new Glow());
 	}
 	
 	
@@ -55,7 +52,7 @@ public class SimulationViewModel {
 	
 	
 	public void simulationRun() {
-		getTimeline().setAutoReverse(false);
+		//getTimeline().setAutoReverse(false);
 		//getTimeline().getKeyFrames().add
 	}
 	
@@ -75,37 +72,6 @@ public class SimulationViewModel {
 		return this.opacity;
 	}
 	
-	
-	public final Effect getEffect() {
-		return this.effect.get();
-	}
-	
-	public final void setEffect(Glow value) {
-		this.effect.set(value);
-	}
-	
-	public ObjectProperty<Glow> effectProperty() {
-		return this.effect;
-	}
-	
-	
-	
-
-	public AnimationTimer getTimer() {
-		return timer;
-	}
-
-	public void setTimer(AnimationTimer timer) {
-		this.timer = timer;
-	}
-
-	public Timeline getTimeline() {
-		return timeline;
-	}
-
-	public void setTimeline(Timeline timeline) {
-		this.timeline = timeline;
-	}
 
 	public ViewHandler getViewHandler() {
 		return viewHandler;
