@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import javafx.scene.shape.Line;
 import model.ApplianceModel;
 import view.ViewHandler;
+import viewmodel.SchedulerViewModel.ApplianceSchedule;
 
 
 public class MappingViewModel {
@@ -39,6 +40,8 @@ public class MappingViewModel {
 	private ApplianceModel model;
 	
 	public ArrayList<Line> lines = new ArrayList<Line>();
+	
+	public ArrayList<ApplianceSchedule> applianceSchedules = new ArrayList<ApplianceSchedule>();
 	
 	private ViewHandler viewHandler;
 	

@@ -6,6 +6,7 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
@@ -16,9 +17,11 @@ import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Line;
+import javafx.stage.Stage;
 import jfxtras.labs.util.event.MouseControlUtil;
 import view.ViewHandler;
 import viewmodel.MappingViewModel;
+import viewmodel.SchedulerViewModel.ApplianceSchedule;
 
 public class MapperController {
 	
@@ -26,6 +29,8 @@ public class MapperController {
 	Button verticalLineButton;
 	@FXML
 	Button horizontalLineButton;
+	@FXML
+	Button printObjectsButton;
 	@FXML
 	Pane mapperPane;
 	
@@ -56,10 +61,7 @@ public class MapperController {
 	public void init(MappingViewModel mappingViewModel) {
 		this.viewModel = mappingViewModel;
 		
-		//test.textProperty().bindBidirectional(viewModel.buttonTextProperty());
 	}
-	
-	
 	
 	public void verticalButtonClicked(ActionEvent e) {
 		Line line = new Line(100,100,100,200);
@@ -101,6 +103,11 @@ public class MapperController {
 		
 	}
 
+	
+	public void printObjectButtonClicked(ActionEvent e) {
+		System.out.println("Appliance Schedules: " + viewModel.applianceSchedules.toString());
+	}
+	
 	public void addAppliance(String appliance) {
 		FileInputStream input = null;
 		try {
@@ -114,7 +121,9 @@ public class MapperController {
 		image.setFitWidth(100);
 		MouseControlUtil.makeDraggable(image);
 		
-		viewModel.createAppliance(appliance);
+		//viewModel.createAppliance(appliance);
+		
+		Stage window = (Stage) root.getScene().getWindow();
 		
 		image.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
 		     @Override
@@ -123,7 +132,7 @@ public class MapperController {
 		    		 
 		    		 //This is where we would allow users to set appliance information
 		    		 try {
-						viewModel.getViewHandler().openNewWindow("Scheduler");
+						viewModel.getViewHandler().openNewWindow("Scheduler", window, viewModel.createAppliance(appliance));
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -150,33 +159,43 @@ public class MapperController {
 		root.getChildren().add(image);
 	}
 	
+	public void addApplianceSchedule(ApplianceSchedule applianceSchedule) {
+		viewModel.applianceSchedules.add(applianceSchedule);
+	}
+	
 	public void addAirConditioner(ActionEvent actionEvent) throws IOException {
 		String appliance = "air-conditioner";
+		
 		addAppliance(appliance);
 	}
 	
 	public void addComputer(ActionEvent actionEvent) throws IOException {
 		String appliance = "computer";
+		
 		addAppliance(appliance);
 	}
 	
 	public void addMicrowave(ActionEvent actionEvent) throws IOException {
 		String appliance = "microwave";
+		
 		addAppliance(appliance);
 	}
 	
 	public void addOven(ActionEvent actionEvent) throws IOException {
 		String appliance = "oven";
+		
 		addAppliance(appliance);
 	}
 	
 	public void addTelevision(ActionEvent actionEvent) throws IOException {
 		String appliance = "television";
+		
 		addAppliance(appliance);
 	}
 	
 	public void addWashingMachine(ActionEvent actionEvent) throws IOException {
 		String appliance = "washing-machine";
+		
 		addAppliance(appliance);
 	}
 

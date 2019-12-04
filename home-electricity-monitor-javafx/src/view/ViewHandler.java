@@ -10,6 +10,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import viewmodel.MappingViewModel.Appliance;
+import viewmodel.SchedulerViewModel.ApplianceSchedule;
 
 public class ViewHandler {
 	
@@ -63,7 +65,7 @@ public class ViewHandler {
 		
 		else if("Scheduler".equals(view)) {
 			SchedulerController viewController = loader.getController();
-			viewController.init(mvViewModel.getLoginViewModel()); 
+			viewController.init(mvViewModel.getSchedulerViewModel()); 
 			viewController.setViewHandler(this);
 		}
 		
@@ -85,7 +87,7 @@ public class ViewHandler {
 	}
 	
 	
-	public void openNewWindow(String viewToOpen) throws IOException {
+	public void openNewWindow(String viewToOpen, Stage window, Appliance appliance) throws IOException {
 		Scene scene = null;
 		Stage stage = null;
 		FXMLLoader loader = new FXMLLoader();
@@ -96,33 +98,54 @@ public class ViewHandler {
 
 		root = loader.load();
 		
-		if("HomePage".equals(viewToOpen)) {
-			HomePageController viewController = loader.getController();
-			viewController.init(mvViewModel.getHomePageViewModel()); //make homepage viewmodel
-			viewController.setViewHandler(this); //galaxy brain right here
-		}
-		
-		else if("Scheduler".equals(viewToOpen)) {
+		if ("Scheduler".equals(viewToOpen)) {
 			SchedulerController viewController = loader.getController();
-			viewController.init(mvViewModel.getLoginViewModel()); 
+			viewController.init(mvViewModel.getSchedulerViewModel()); 
 			viewController.setViewHandler(this);
+			viewController.setApplianceLabels(appliance);
 		}
 		
-		else if("Mapper".equals(viewToOpen)) {
-			MapperController viewController = loader.getController();
-			viewController.init(mvViewModel.getMappingViewModel()); //make homepage viewmodel
-			viewController.setViewHandler(this); //galaxy brain right here
-		}
-		else if("Simulation".equals(viewToOpen)) {
-			SimulationController viewController = loader.getController();
-			viewController.init(mvViewModel.getSimulationViewModel()); //make homepage viewmodel
-			viewController.setViewHandler(this); //galaxy brain right here
-		}
-		
+		/*
 		scene = new Scene(root);
 		stage = new Stage();
 		stage.setScene(scene);
-		stage.show();
+		stage.show();*/
+		
+		
+		scene = new Scene(root);
+		window.setScene(scene);
+		window.setTitle(viewToOpen);
+		window.show();
+	}
+	
+	public void sendSchedule(String viewToOpen, Stage window, ApplianceSchedule applianceSchedule) throws IOException {
+		Scene scene = null;
+		Stage stage = null;
+		FXMLLoader loader = new FXMLLoader();
+		Parent root = null;
+		
+		loader.setClassLoader(getClass().getClassLoader());
+		loader.setLocation(getClass().getResource(viewToOpen.toLowerCase()+"/"+ viewToOpen + ".fxml")); //should be HomePage/HomePage.fxml
+
+		root = loader.load();
+		
+		if("Mapper".equals(viewToOpen)) {
+			MapperController viewController = loader.getController();
+			viewController.init(mvViewModel.getMappingViewModel()); //make homepage viewmodel
+			viewController.setViewHandler(this); //galaxy brain right here
+			viewController.addApplianceSchedule(applianceSchedule);
+		}
+		
+		/*
+		scene = new Scene(root);
+		stage = new Stage();
+		stage.setScene(scene);
+		stage.show();*/
+		
+		scene = new Scene(root);
+		window.setScene(scene);
+		window.setTitle(viewToOpen);
+		window.show();
 	}
 	
 	

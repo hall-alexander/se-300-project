@@ -1,5 +1,6 @@
 package viewmodel;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
@@ -7,17 +8,21 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.stage.Stage;
 import model.ApplianceModel;
 import view.ViewHandler;
+import viewmodel.MappingViewModel.Appliance;
 
 public class SchedulerViewModel {
 
+	private Appliance appliance;
+	
+	private StringProperty applianceLabel = new SimpleStringProperty("appliance");
+	private StringProperty wattageLabel = new SimpleStringProperty("wattage");
 	private IntegerProperty startHour = new SimpleIntegerProperty(0);
 	private IntegerProperty startMinute = new SimpleIntegerProperty(0);
-	private IntegerProperty startSecond = new SimpleIntegerProperty(0);
 	private IntegerProperty endHour = new SimpleIntegerProperty(0);
 	private IntegerProperty endMinute = new SimpleIntegerProperty(0);
-	private IntegerProperty endSecond = new SimpleIntegerProperty(0);
 	
 	private ViewHandler viewHandler;
 	private ApplianceModel model;
@@ -27,10 +32,43 @@ public class SchedulerViewModel {
 		
 	}
 	
-	public void submitFunctionality() {
+	public class ApplianceSchedule {
+		String applianceName;
+		double wattage;
+		int startH;
+		int startM;
+		int stopH;
+		int stopM;
+		
+		ApplianceSchedule(){};
+		
+		ApplianceSchedule(String applianceName, double wattage, int startH, int startM, int stopH, int stopM) {
+			this.applianceName = applianceName;
+			this.wattage = wattage;
+			this.startH = startH;
+			this.startM = startM;
+			this.stopH = stopH;
+			this.stopM = stopM;
+		}
+	}
+	
+	public void submitFunctionality(Stage window) {
 		System.out.println("Submit Button Clicked!");
 	      
-		System.out.println("Start hour: " + this.getStartHour().toString());
+		ApplianceSchedule applianceSchedule = new ApplianceSchedule(getApplianceLabel(), Double.parseDouble(getWattageLabel()), 
+				getStartHour(), getStartMinute(), getEndHour(), getEndMinute());
+		
+		System.out.println("Appliance name: " + getApplianceLabel());
+		System.out.println("Wattage: " + getWattageLabel());
+		
+		try {
+			getViewHandler().sendSchedule("Mapper", window, applianceSchedule);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 		
 		/*
 		String applianceName;
@@ -178,15 +216,15 @@ public class SchedulerViewModel {
 	   }*/
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
 	//Getters and setters
+	
+	public StringProperty applianceLabelProperty() {return this.applianceLabel;}
+	public final String getApplianceLabel() {return this.applianceLabel.get();}
+	public final void setApplianceLabel(String value) {this.applianceLabel.set(value);}
+	
+	public StringProperty wattageLabelProperty() {return this.wattageLabel;}
+	public final String getWattageLabel() {return this.wattageLabel.get();}
+	public final void setWattageLabel(String value) {this.wattageLabel.set(value);}
 	
 	public IntegerProperty startHourProperty() {return this.startHour;}
 	public final Integer getStartHour() {return this.startHour.get();}
@@ -196,9 +234,6 @@ public class SchedulerViewModel {
 	public final Integer getStartMinute() {return this.startMinute.get();}
 	public final void setStartMinute(Integer value) {this.startMinute.set(value);}
 	
-	public IntegerProperty startSecondProperty() {return this.startSecond;}
-	public final Integer getStartSecond() {return this.startSecond.get();}
-	public final void setStartSecond(Integer value) {this.startSecond.set(value);}
 	
 	public IntegerProperty endHourProperty() {return this.endHour;}
 	public final Integer getEndHour() {return this.endHour.get();}
@@ -207,10 +242,14 @@ public class SchedulerViewModel {
 	public IntegerProperty endMinuteProperty() {return this.endMinute;}
 	public final Integer getEndMinute() {return this.endMinute.get();}
 	public final void setEndMinute(Integer value) {this.endMinute.set(value);}
-	
-	public IntegerProperty endSecondProperty() {return this.endSecond;}
-	public final Integer getEndSecond() {return this.endSecond.get();}
-	public final void setEndSecond(Integer value) {this.endSecond.set(value);}
+
+	public Appliance getAppliance() {
+		return appliance;
+	}
+
+	public void setAppliance(Appliance appliance) {
+		this.appliance = appliance;
+	}
 
 	public ViewHandler getViewHandler() {
 		return viewHandler;
