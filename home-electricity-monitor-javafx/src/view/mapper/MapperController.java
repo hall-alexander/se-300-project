@@ -65,18 +65,40 @@ public class MapperController {
 		Line line = new Line(100,100,100,200);
 		line.setStrokeWidth(8);
 		viewModel.lines.add(line);
-		//System.out.println(lines);
 		mapperPane.getChildren().add(line);
 		MouseControlUtil.makeDraggable(line);
+		
+		line.addEventHandler(ScrollEvent.SCROLL, new EventHandler<ScrollEvent>() {
+
+			@Override
+			public void handle(ScrollEvent event) {
+				if (event.isControlDown()) {
+					line.setEndY(line.getEndY() + event.getDeltaY());
+				}
+				
+			}
+		});
+		
 	}
 	
 	public void horizontalButtonClicked(ActionEvent e) {
 		Line line = new Line(100,100,200,100);
 		line.setStrokeWidth(8);
 		viewModel.lines.add(line);
-		//System.out.println(lines);
 		mapperPane.getChildren().add(line);
 		MouseControlUtil.makeDraggable(line);
+		
+		line.addEventHandler(ScrollEvent.SCROLL, new EventHandler<ScrollEvent>() {
+
+			@Override
+			public void handle(ScrollEvent event) {
+				if (event.isControlDown()) {
+					line.setEndX(line.getEndX() + event.getDeltaY());
+				}
+				
+			}
+		});
+		
 	}
 
 	public void addAppliance(String appliance) {
@@ -92,6 +114,7 @@ public class MapperController {
 		image.setFitWidth(100);
 		MouseControlUtil.makeDraggable(image);
 		
+		viewModel.createAppliance(appliance);
 		
 		image.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
 		     @Override
@@ -99,6 +122,12 @@ public class MapperController {
 		    	 if (event.isControlDown()) {
 		    		 
 		    		 //This is where we would allow users to set appliance information
+		    		 try {
+						viewModel.getViewHandler().openNewWindow("Scheduler");
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 		    		 
 		    		 System.out.println("Appliance pressed ");
 		    	 }

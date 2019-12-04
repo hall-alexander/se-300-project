@@ -10,23 +10,19 @@ import javafx.beans.property.StringProperty;
 import model.ApplianceModel;
 import view.ViewHandler;
 
-public class LoginViewModel {
+public class SchedulerViewModel {
 
-	private StringProperty applianceName = new SimpleStringProperty("applianceName");
-	private ObjectProperty<LocalDate> startDate = new SimpleObjectProperty<>(this, "startDate");
 	private IntegerProperty startHour = new SimpleIntegerProperty(0);
 	private IntegerProperty startMinute = new SimpleIntegerProperty(0);
 	private IntegerProperty startSecond = new SimpleIntegerProperty(0);
-	private ObjectProperty<LocalDate> endDate = new SimpleObjectProperty<>(this, "endDate");
 	private IntegerProperty endHour = new SimpleIntegerProperty(0);
 	private IntegerProperty endMinute = new SimpleIntegerProperty(0);
 	private IntegerProperty endSecond = new SimpleIntegerProperty(0);
-	private StringProperty priority = new SimpleStringProperty("priority");
 	
 	private ViewHandler viewHandler;
 	private ApplianceModel model;
 	
-	public LoginViewModel(ApplianceModel model) {
+	public SchedulerViewModel(ApplianceModel model) {
 		this.model = model;
 		
 	}
@@ -34,9 +30,7 @@ public class LoginViewModel {
 	public void submitFunctionality() {
 		System.out.println("Submit Button Clicked!");
 	      
-		System.out.println("Start date: " + this.getStartDate().toString());
 		System.out.println("Start hour: " + this.getStartHour().toString());
-		System.out.println("applianceName: " + this.getApplianceName());
 		
 		/*
 		String applianceName;
@@ -193,13 +187,6 @@ public class LoginViewModel {
 	
 	
 	//Getters and setters
-	public StringProperty applianceNameProperty() {return this.applianceName;}
-	public final String getApplianceName() {return this.applianceName.get();}
-	public final void setApplianceName(String text) {this.applianceName.set(text);}
-	
-	public ObjectProperty<LocalDate> startDateProperty() {return this.startDate;}
-	public final LocalDate getStartDate() {return this.startDate.get();}
-	public final void setStartDate(LocalDate date) {this.startDate.set(date);}
 	
 	public IntegerProperty startHourProperty() {return this.startHour;}
 	public final Integer getStartHour() {return this.startHour.get();}
@@ -213,10 +200,6 @@ public class LoginViewModel {
 	public final Integer getStartSecond() {return this.startSecond.get();}
 	public final void setStartSecond(Integer value) {this.startSecond.set(value);}
 	
-	public ObjectProperty<LocalDate> endDateProperty() {return this.endDate;}
-	public final LocalDate getEndDate() {return this.endDate.get();}
-	public final void setEndDate(LocalDate date) {this.endDate.set(date);}
-	
 	public IntegerProperty endHourProperty() {return this.endHour;}
 	public final Integer getEndHour() {return this.endHour.get();}
 	public final void setEndHour(Integer value) {this.endHour.set(value);}
@@ -228,10 +211,6 @@ public class LoginViewModel {
 	public IntegerProperty endSecondProperty() {return this.endSecond;}
 	public final Integer getEndSecond() {return this.endSecond.get();}
 	public final void setEndSecond(Integer value) {this.endSecond.set(value);}
-	
-	public StringProperty priorityProperty() {return this.priority;}
-	public final String getPriority() {return this.priority.get();}
-	public final void setPriority(String text) {this.priority.set(text);}
 
 	public ViewHandler getViewHandler() {
 		return viewHandler;

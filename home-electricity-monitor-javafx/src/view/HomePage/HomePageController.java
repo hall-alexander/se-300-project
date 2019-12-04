@@ -14,10 +14,6 @@ public class HomePageController {
 	@FXML
 	Button homeLayout;
 	@FXML
-	Button appliances;
-	@FXML
-	Button login;
-	@FXML
 	Button mapper;
 	@FXML
 	Button simulation;
