@@ -1,6 +1,10 @@
 package viewmodel;
 
 import java.util.ArrayList;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.image.ImageView;
 import javafx.scene.shape.Line;
 import model.ApplianceModel;
 import view.ViewHandler;
@@ -39,9 +43,15 @@ public class MappingViewModel {
 	
 	private ApplianceModel model;
 	
-	public ArrayList<Line> lines = new ArrayList<Line>();
+	public ObservableList<Line> lines = FXCollections.observableArrayList();
 	
 	public ArrayList<ApplianceSchedule> applianceSchedules = new ArrayList<ApplianceSchedule>();
+	
+	public ObservableList<ImageView> images = FXCollections.observableArrayList();
+	
+	public ObservableList<Double> imagesLayout = FXCollections.observableArrayList();
+	
+	public ObservableList<Double> lineLayouts = FXCollections.observableArrayList();
 	
 	private ViewHandler viewHandler;
 	

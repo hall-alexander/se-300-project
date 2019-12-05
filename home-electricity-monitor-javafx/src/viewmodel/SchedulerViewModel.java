@@ -33,21 +33,69 @@ public class SchedulerViewModel {
 	}
 	
 	public class ApplianceSchedule {
-		String applianceName;
-		double wattage;
-		int startH;
-		int startM;
-		int stopH;
-		int stopM;
+		private String applianceName;
+		private double wattage;
+		private int startH;
+		private int startM;
+		private int stopH;
+		private int stopM;
 		
 		ApplianceSchedule(){};
 		
 		ApplianceSchedule(String applianceName, double wattage, int startH, int startM, int stopH, int stopM) {
+			this.setApplianceName(applianceName);
+			this.setWattage(wattage);
+			this.setStartH(startH);
+			this.setStartM(startM);
+			this.setStopH(stopH);
+			this.setStopM(stopM);
+		}
+
+		public String getApplianceName() {
+			return applianceName;
+		}
+
+		public void setApplianceName(String applianceName) {
 			this.applianceName = applianceName;
+		}
+
+		public double getWattage() {
+			return wattage;
+		}
+
+		public void setWattage(double wattage) {
 			this.wattage = wattage;
+		}
+
+		public int getStartH() {
+			return startH;
+		}
+
+		public void setStartH(int startH) {
 			this.startH = startH;
+		}
+
+		public int getStartM() {
+			return startM;
+		}
+
+		public void setStartM(int startM) {
 			this.startM = startM;
+		}
+
+		public int getStopH() {
+			return stopH;
+		}
+
+		public void setStopH(int stopH) {
 			this.stopH = stopH;
+		}
+
+		public int getStopM() {
+			return stopM;
+		}
+
+		public void setStopM(int stopM) {
 			this.stopM = stopM;
 		}
 	}

@@ -3,6 +3,9 @@ package view.mapper;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -31,6 +34,9 @@ public class MapperController {
 	Button horizontalLineButton;
 	@FXML
 	Button printObjectsButton;
+	@FXML
+	Button loadAppliances;
+	
 	@FXML
 	Pane mapperPane;
 	
@@ -61,6 +67,18 @@ public class MapperController {
 	public void init(MappingViewModel mappingViewModel) {
 		this.viewModel = mappingViewModel;
 		
+	}
+	
+	public void loadAppliancesButtonClicked(ActionEvent e) {
+		for(int i=0; i<viewModel.images.size(); i++) {
+			mapperPane.getChildren().add(viewModel.images.get(i));
+		}
+		
+		for(int i=0; i<viewModel.lines.size(); i++) {
+			mapperPane.getChildren().add(viewModel.lines.get(i));
+			
+			
+		}
 	}
 	
 	public void verticalButtonClicked(ActionEvent e) {
@@ -105,7 +123,69 @@ public class MapperController {
 
 	
 	public void printObjectButtonClicked(ActionEvent e) {
-		System.out.println("Appliance Schedules: " + viewModel.applianceSchedules.toString());
+		
+		
+		Timer timer = new Timer();
+
+		TimerTask gatherEvents = new TimerTask() {
+			int iterations = 30;
+			int minute = 0;
+			int hour = 0;
+			
+			public void run() {
+
+				if (iterations > 0) {
+					
+					System.out.println("Current time is: " + hour + ":" + minute);
+					
+					for(int i=0; i<viewModel.applianceSchedules.size(); i++) {
+
+						if ((viewModel.applianceSchedules.get(i).getStartH() <= hour) && 
+								(viewModel.applianceSchedules.get(i).getStartM() < minute) &&
+								(viewModel.applianceSchedules.get(i).getStopH() >= hour) &&
+								(viewModel.applianceSchedules.get(i).getStopM() > minute)) {
+
+							
+							System.out.println("The appliance is on.");
+							viewModel.images.get(i).setOpacity(1);
+
+						}
+
+						else {
+							System.out.println("The appliance is off");
+							
+							//viewModel.images.get(1).setOpacity(0);
+							viewModel.images.get(i).setOpacity(0);
+
+						}
+
+					}
+					
+					if (minute == 55) {
+						minute = 0;
+						hour++;
+						iterations--;
+					}
+					
+					else {
+						minute += 5;
+						iterations--;
+					}
+
+				}
+				else {
+					timer.cancel();
+				}
+
+			}
+		};
+
+		timer.scheduleAtFixedRate(gatherEvents, 0000l, 1000l);
+
+		
+		
+		
+		
 	}
 	
 	public void addAppliance(String appliance) {
@@ -157,6 +237,8 @@ public class MapperController {
 		});
 		
 		root.getChildren().add(image);
+		
+		viewModel.images.add(image);
 	}
 	
 	public void addApplianceSchedule(ApplianceSchedule applianceSchedule) {
