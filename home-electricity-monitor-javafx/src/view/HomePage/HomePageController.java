@@ -14,11 +14,9 @@ public class HomePageController {
 	@FXML
 	Button homeLayout;
 	@FXML
-	Button appliances;
-	@FXML
-	Button login;
-	@FXML
 	Button mapper;
+	@FXML
+	Button simulation;
 	
 	private HomePageViewModel viewModel;
 	
@@ -35,19 +33,6 @@ public class HomePageController {
 	public void setViewHandler(ViewHandler viewHandler) {
 		viewModel.setViewHandler(viewHandler);
 	}
-	
-	/*
-	public void changeScene_old(ActionEvent actionEvent) throws IOException {
-		Parent parent = null;
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/temp/Temp.fxml"));
-		
-		parent = loader.load();
-		Scene mapperView = new Scene(parent);
-		
-		Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-		window.setScene(mapperView);
-		window.show();
-	}*/
 	
 	public void changeScene(ActionEvent actionEvent) throws IOException {
 		String view = null;
