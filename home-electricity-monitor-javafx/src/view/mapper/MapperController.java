@@ -5,11 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
@@ -144,7 +142,6 @@ public class MapperController {
 								(viewModel.applianceSchedules.get(i).getStartM() < minute) &&
 								(viewModel.applianceSchedules.get(i).getStopH() >= hour) &&
 								(viewModel.applianceSchedules.get(i).getStopM() > minute)) {
-
 							
 							System.out.println("The appliance is on.");
 							viewModel.images.get(i).setOpacity(1);
@@ -153,8 +150,6 @@ public class MapperController {
 
 						else {
 							System.out.println("The appliance is off");
-							
-							//viewModel.images.get(1).setOpacity(0);
 							viewModel.images.get(i).setOpacity(0);
 
 						}
@@ -180,11 +175,7 @@ public class MapperController {
 			}
 		};
 
-		timer.scheduleAtFixedRate(gatherEvents, 0000l, 1000l);
-
-		
-		
-		
+		timer.scheduleAtFixedRate(gatherEvents, 0000l, 1000l);	
 		
 	}
 	
@@ -200,8 +191,6 @@ public class MapperController {
 		image.setFitHeight(100);
 		image.setFitWidth(100);
 		MouseControlUtil.makeDraggable(image);
-		
-		//viewModel.createAppliance(appliance);
 		
 		Stage window = (Stage) root.getScene().getWindow();
 		

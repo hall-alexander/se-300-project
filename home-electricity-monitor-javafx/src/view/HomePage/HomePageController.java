@@ -15,8 +15,6 @@ public class HomePageController {
 	Button homeLayout;
 	@FXML
 	Button mapper;
-	@FXML
-	Button simulation;
 	
 	private HomePageViewModel viewModel;
 	

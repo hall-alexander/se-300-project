@@ -4,7 +4,7 @@ public class ApplianceModelManager implements ApplianceModel{
 
 	
 
-	private double nodeNum, watt;
+	private double watt;
 	private String name;
 	private boolean on = true;
 

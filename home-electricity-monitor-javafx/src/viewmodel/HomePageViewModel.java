@@ -1,7 +1,5 @@
 package viewmodel;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import model.ApplianceModel;
 import view.ViewHandler;
 

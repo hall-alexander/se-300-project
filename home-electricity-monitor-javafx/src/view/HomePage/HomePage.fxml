@@ -23,6 +23,5 @@
             <Image url="@../../../images/softwareWithDaBois.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="simulation" layoutX="426.0" layoutY="364.0" mnemonicParsing="false" onAction="#changeScene" prefHeight="50.0" prefWidth="150.0" text="Simulation" />
    </children>
 </AnchorPane>
